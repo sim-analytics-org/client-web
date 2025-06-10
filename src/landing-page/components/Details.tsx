@@ -181,7 +181,7 @@ export default function Details() {
               height: '100%',
             }}
           >
-            {items.map(({ icon, title, description }, index) => (
+            {items.map(({ icon, title }, index) => (
               <Box
                 key={index}
                 component={Button}
