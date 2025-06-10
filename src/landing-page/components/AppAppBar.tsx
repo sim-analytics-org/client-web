@@ -143,16 +143,25 @@ export default function AppAppBar() {
                 <MenuItem>FAQ</MenuItem>
                 <MenuItem>Blog</MenuItem>
                 <Divider sx={{ my: 3 }} />
-                <MenuItem>
-                  <Button color="primary" variant="contained" fullWidth onClick={() => { navigate('/signup') }}>
-                    Sign up
-                  </Button>
-                </MenuItem>
-                <MenuItem>
-                  <Button color="primary" variant="outlined" fullWidth onClick={() => { navigate('/login') }}>
-                    Sign in
-                  </Button>
-                </MenuItem>
+                {
+                  token === null ?
+                    <>
+                      <MenuItem>
+                        <Button color="primary" variant="contained" fullWidth onClick={() => { navigate('/signup') }}>
+                          Sign up
+                        </Button>
+                      </MenuItem>
+                      <MenuItem>
+                        <Button color="primary" variant="outlined" fullWidth onClick={() => { navigate('/login') }}>
+                          Sign in
+                        </Button>
+                      </MenuItem>
+                    </>
+                    :
+                    <Button color="primary" variant="contained" fullWidth onClick={() => { navigate('/account') }}>
+                      Go to account
+                    </Button>
+                }
               </Box>
             </Drawer>
           </Box>
