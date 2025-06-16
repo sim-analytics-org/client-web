@@ -4,7 +4,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import Link from '@mui/material/Link';
+// import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
@@ -64,10 +64,7 @@ export default function FAQ() {
               gutterBottom
               sx={{ maxWidth: { sm: '100%', md: '70%' } }}
             >
-              You can reach our customer support team by emailing&nbsp;
-              <Link href="mailto:support@email.com">support@email.com</Link>
-              &nbsp;or calling our toll-free number. We&apos;re here to assist you
-              promptly.
+              You can reach our customer support team by emailing <b>SimAnalyticsWin@gmail.com</b>
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -81,7 +78,7 @@ export default function FAQ() {
             id="panel2d-header"
           >
             <Typography component="span" variant="subtitle2">
-              Can I get a refund?
+              Will I win every single day?
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
@@ -90,9 +87,7 @@ export default function FAQ() {
               gutterBottom
               sx={{ maxWidth: { sm: '100%', md: '70%' } }}
             >
-              No, unfortunately we do not offer refunds. Keep in mind that although SimAnalytics sells high-quality picks,
-              results are still volatile on a day-by-day basis. However, once you pay you have access to picks 
-              for the entire period in which you paid. 
+              While the majority of days will be profitable there will be an occasional losing day. It is part of the game and important to manage your bankroll, but long term our team provides winning months, and massive yearly profits.
             </Typography>
           </AccordionDetails>
         </Accordion>

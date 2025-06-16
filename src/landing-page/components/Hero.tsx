@@ -123,21 +123,21 @@ export default function Hero() {
               }}
             />
 
-            <InputLabel htmlFor="phone-hero" sx={visuallyHidden}>
-              Phone
+            <InputLabel htmlFor="email-hero" sx={visuallyHidden}>
+              Email
             </InputLabel>
             <TextField
-              id="phone-hero"
+              id="email-hero"
               hiddenLabel
               size="small"
               variant="outlined"
-              aria-label="Enter your phone number"
-              placeholder="Your phone number"
+              aria-label="Enter your email"
+              placeholder="Your email"
               fullWidth
               slotProps={{
                 htmlInput: {
                   autoComplete: 'off',
-                  'aria-label': 'Enter your phone number',
+                  'aria-label': 'Enter your email',
                 },
               }}
             />
@@ -181,6 +181,16 @@ export default function Hero() {
             </Link>
             .
           </Typography>
+          <a href="#pricing">
+            <Button
+              variant="contained"
+              color="primary"
+              size="small"
+              sx={{ minWidth: 'fit-content' }}
+            >
+              See VIP packages
+            </Button>
+          </a>
         </Stack>
         {/* <StyledBox id="image" /> */}
       </Container>

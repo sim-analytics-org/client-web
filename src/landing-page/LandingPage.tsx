@@ -5,7 +5,7 @@ import AppTheme from '../shared-theme/AppTheme';
 import AppAppBar from './components/AppAppBar';
 import Hero from './components/Hero';
 // import LogoCollection from './components/LogoCollection';
-import Highlights from './components/Highlights';
+// import Highlights from './components/Highlights';
 import Pricing from './components/Pricing';
 import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
@@ -22,14 +22,15 @@ export default function LandingPage(props: { disableCustomTheme?: boolean }) {
       <Hero />
       <div>
         <About />
+        <Divider />
         <Details />
         <Divider />
         <Pricing />
         <Divider />
         <Testimonials />
         <Divider />
-        <Highlights />
-        <Divider />
+        {/* <Highlights />
+        <Divider /> */}
         
         <FAQ />
         <Divider />

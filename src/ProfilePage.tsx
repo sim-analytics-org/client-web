@@ -188,7 +188,7 @@ export default function ProfilePage() {
                 </Grid>
             </Grid>
 
-            <Typography variant="h5" gutterBottom>
+            <Typography variant="h5" gutterBottom color="text.primary">
                 Billing Plan
             </Typography>
 

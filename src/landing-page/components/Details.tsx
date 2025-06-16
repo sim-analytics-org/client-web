@@ -23,7 +23,9 @@ const items = [
     icon: <ViewQuiltRoundedIcon />,
     title: 'Why SimAnalytics?',
     description:
-      'This item could provide a snapshot of the most important metrics or data points related to the product.',
+      "Proven Profitability: With over $35 million in total profits and a 20+ year track record, Sim Analytics isn’t just talk — we deliver results. Our clients consistently win thousands of dollars monthly using systems that stand the test of time. \
+ #1 Ranked Sports Handicapping Service: We’re not just another pick service. We’re the #1 trusted source for serious sports bettors who want reliable, data-backed selections that outperform the market. \
+ AI-Powered Advantage: Our cutting-edge AI and analytics systems are built to find profitable, long-term betting opportunities. These models adapt in real time to market shifts, giving you a sustained edge others can’t match",
     // imageLight: `url("https://mui.com/static/images/templates/templates-images/dash-light.png")`,
     // imageDark: `url("https://mui.com/static/images/templates/templates-images/dash-dark.png")`,
   },
@@ -31,7 +33,9 @@ const items = [
     icon: <EdgesensorHighRoundedIcon />,
     title: 'What you get',
     description:
-      'This item could provide information about the mobile app version of the product.',
+      "Daily Picks via text, email and on your account registration page. {newline} \
+Bankroll Management advice. {newline} \
+Personal tips and customer support from our team.",
     // imageLight: `url("https://mui.com/static/images/templates/templates-images/mobile-light.png")`,
     // imageDark: `url("https://mui.com/static/images/templates/templates-images/mobile-dark.png")`,
   },
@@ -70,7 +74,7 @@ interface MobileLayoutProps {
 export function MobileLayout({
   selectedItemIndex,
   handleItemClick,
-  selectedFeature,
+  // selectedFeature,
 }: MobileLayoutProps) {
   if (!items[selectedItemIndex]) {
     return null;
@@ -100,7 +104,13 @@ export function MobileLayout({
           gutterBottom
           sx={{ color: 'text.primary', fontWeight: 'medium' }}
         >
-          {items[selectedItemIndex].description}
+          {items[selectedItemIndex].description.split('{newline}').map((value: string, _: number) => (
+            <>
+              {value}
+              <br />
+            </>
+          ))}
+
         </Typography>
         {/* <Box
           sx={(theme) => ({
@@ -122,17 +132,17 @@ export function MobileLayout({
               : {}
           }
         /> */}
-        <Box sx={{ px: 2, pb: 2 }}>
+        {/* <Box sx={{ px: 2, pb: 2 }}>
           <Typography
             gutterBottom
             sx={{ color: 'text.primary', fontWeight: 'medium' }}
           >
             {selectedFeature.title}
           </Typography>
-          {/* <Typography variant="body2" sx={{ color: 'text.secondary', mb: 1.5 }}>
+          <Typography variant="body2" sx={{ color: 'text.secondary', mb: 1.5 }}>
             {selectedFeature.description}
-          </Typography> */}
-        </Box>
+          </Typography>
+        </Box> */}
       </Card>
     </Box>
   );
@@ -251,7 +261,13 @@ export default function Details() {
               gutterBottom
               sx={{ color: 'text.primary', fontWeight: 'medium' }}
             >
-              {items[selectedItemIndex].description}
+              {/* {items[selectedItemIndex].description} */}
+              {items[selectedItemIndex].description.split('{newline}').map((value: string, _: number) => (
+                <>
+                  {value}
+                  <br />
+                </>
+              ))}
             </Typography>
             {/* <Box
               sx={(theme) => ({

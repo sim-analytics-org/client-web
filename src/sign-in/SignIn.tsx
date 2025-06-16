@@ -104,7 +104,7 @@ export default function SignIn(props: { disableCustomTheme?: boolean }) {
       redirect: "follow"
     })
     const responseText = await res.text();
-    if (responseText.toLowerCase().includes("invalid credentials")) {
+    if (!res.ok) {
       setEmailError(true);
       setEmailErrorMessage("Email or password is incorrect");
       setPasswordError(true);
