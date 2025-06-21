@@ -100,16 +100,16 @@ export default function Footer() {
           <Link color="text.secondary" variant="body2" href="#">
             Features
           </Link>
-          <Link color="text.secondary" variant="body2" href="#">
+          <Link color="text.secondary" variant="body2" href="#testimonials">
             Testimonials
           </Link>
           <Link color="text.secondary" variant="body2" href="#">
             Highlights
           </Link>
-          <Link color="text.secondary" variant="body2" href="#">
+          <Link color="text.secondary" variant="body2" href="#pricing">
             Pricing
           </Link>
-          <Link color="text.secondary" variant="body2" href="#">
+          <Link color="text.secondary" variant="body2" href="#faq">
             FAQs
           </Link>
         </Box>
@@ -129,9 +129,9 @@ export default function Footer() {
           {/* <Link color="text.secondary" variant="body2" href="#">
             Careers
           </Link> */}
-          <Link color="text.secondary" variant="body2" href="#">
+          {/* <Link color="text.secondary" variant="body2" href="#">
             Press
-          </Link>
+          </Link> */}
         </Box>
         <Box
           sx={{
@@ -143,10 +143,10 @@ export default function Footer() {
           <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
             Legal
           </Typography>
-          <Link color="text.secondary" variant="body2" href="#">
+          <Link color="text.secondary" variant="body2" href="/terms-of-service" target="_blank" rel="noopener noreferrer">
             Terms
           </Link>
-          <Link color="text.secondary" variant="body2" href="#">
+          <Link color="text.secondary" variant="body2" href="/privacy-policy" target="_blank" rel="noopener noreferrer">
             Privacy
           </Link>
           <Link color="text.secondary" variant="body2" href="#">
@@ -165,13 +165,24 @@ export default function Footer() {
         }}
       >
         <div>
-          <Link color="text.secondary" variant="body2" href="#">
+          <Link
+            color="text.secondary"
+            variant="body2"
+            href="/privacy-policy"
+            target="_blank"
+            rel="noopener noreferrer">
             Privacy Policy
           </Link>
           <Typography sx={{ display: 'inline', mx: 0.5, opacity: 0.5 }}>
             &nbsp;•&nbsp;
           </Typography>
-          <Link color="text.secondary" variant="body2" href="#">
+          <Link
+            color="text.secondary"
+            variant="body2"
+            href="/terms-of-service"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Terms of Service
           </Link>
           <Copyright />
