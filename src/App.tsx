@@ -10,6 +10,7 @@ import ProfilePage from './ProfilePage';
 import SignIn from './sign-in/SignIn';
 import TermsOfService from './landing-page/components/TermsOfService';
 import PrivacyPolicy from './landing-page/components/PrivacyPolicy';
+import ContactUs from './landing-page/components/ContactUs';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/login" element={<SignIn />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/contact" element={<ContactUs />} />
           <Route
             path="/account"
             element={

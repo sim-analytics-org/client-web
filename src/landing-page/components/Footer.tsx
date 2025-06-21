@@ -149,7 +149,7 @@ export default function Footer() {
           <Link color="text.secondary" variant="body2" href="/privacy-policy" target="_blank" rel="noopener noreferrer">
             Privacy
           </Link>
-          <Link color="text.secondary" variant="body2" href="#">
+          <Link color="text.secondary" variant="body2" href="/contact" target="_blank" rel="noopener noreferrer">
             Contact
           </Link>
         </Box>
@@ -185,6 +185,9 @@ export default function Footer() {
           >
             Terms of Service
           </Link>
+          <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1 }}>
+            667-228-2754
+          </Typography>
           <Copyright />
         </div>
         <Stack

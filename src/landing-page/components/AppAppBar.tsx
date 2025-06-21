@@ -84,6 +84,12 @@ export default function AppAppBar() {
                   FAQ
                 </Button>
               </a>
+
+              <a href="/contact"  target="_blank" rel="noopener noreferrer">
+                <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
+                  Contact Us
+                </Button>
+              </a>
             </Box>
           </Box>
           <Box
@@ -136,12 +142,12 @@ export default function AppAppBar() {
                   </IconButton>
                 </Box>
 
-                <MenuItem>Features</MenuItem>
-                <MenuItem>Testimonials</MenuItem>
-                <MenuItem>Highlights</MenuItem>
-                <MenuItem>Pricing</MenuItem>
-                <MenuItem>FAQ</MenuItem>
-                <MenuItem>Blog</MenuItem>
+                <MenuItem><a href="#about" onClick={toggleDrawer(false)}>About</a></MenuItem>
+                <MenuItem><a href="#details" onClick={toggleDrawer(false)}>Details</a></MenuItem>
+                <MenuItem><a href="#pricing" onClick={toggleDrawer(false)}>Pricing</a></MenuItem>
+                <MenuItem><a href="#testimonials" onClick={toggleDrawer(false)}>Testimonials</a></MenuItem>
+                <MenuItem><a href="#faq" onClick={toggleDrawer(false)}>FAQ</a></MenuItem>
+                <MenuItem><a href="/contact" target="_blank" rel="noopener noreferrer" onClick={toggleDrawer(false)}>Contact Us</a></MenuItem>
                 <Divider sx={{ my: 3 }} />
                 {
                   token === null ?
