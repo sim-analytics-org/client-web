@@ -8,9 +8,10 @@ import { ProtectedRoute } from './auth/ProtectedRoute';
 import SignUp from './sign-up/SignUp';
 import ProfilePage from './ProfilePage';
 import SignIn from './sign-in/SignIn';
-import TermsOfService from './landing-page/components/TermsOfService';
-import PrivacyPolicy from './landing-page/components/PrivacyPolicy';
+import TermsOfService from './info-legal-pages/TermsOfService';
+import PrivacyPolicy from './info-legal-pages/PrivacyPolicy';
 import ContactUs from './landing-page/components/ContactUs';
+import AdminPage from './admin-page/AdminPage';
 
 function App() {
   return (
@@ -25,7 +26,8 @@ function App() {
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/contact" element={<ContactUs />} />
-          <Route
+          <Route path="/admin" element={<AdminPage />} />
+          <Route 
             path="/account"
             element={
               <ProtectedRoute>

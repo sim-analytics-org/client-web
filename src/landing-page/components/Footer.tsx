@@ -189,6 +189,13 @@ export default function Footer() {
             667-228-2754
           </Typography>
           <Copyright />
+          <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1 }}>
+            <Link color="text.secondary"
+              variant="body2"
+              href="/admin"
+              target="_blank"
+              rel="noopener noreferrer">Admin panel</Link>
+          </Typography>
         </div>
         <Stack
           direction="row"
