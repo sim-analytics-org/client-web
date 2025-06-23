@@ -1,5 +1,5 @@
-const BASE_API_ENDPOINT_URL = 'http://localhost:8080';
-// const BASE_API_ENDPOINT_URL = 'https://simanalytics-backend-542993993895.us-east4.run.app';
+// const BASE_API_ENDPOINT_URL = 'http://localhost:8080';
+const BASE_API_ENDPOINT_URL = 'https://simanalytics-backend-542993993895.us-east4.run.app';
 
 export const SIGNUP_URL = BASE_API_ENDPOINT_URL + '/signup';
 export const LOGIN_URL = BASE_API_ENDPOINT_URL + '/login';
