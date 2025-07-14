@@ -15,6 +15,7 @@ import { useAuthContext } from '../auth/AuthContext';
 import { SIGNUP_URL } from '../constants';
 import { useNavigate } from 'react-router-dom'
 import SitemarkIcon from '../shared-theme/SitemarkIcon';
+import { Checkbox, FormControlLabel } from '@mui/material';
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: 'flex',
@@ -64,7 +65,8 @@ export default function SignUp(props: { disableCustomTheme?: boolean }) {
   const [phone, setPhone] = React.useState("");
   const [password, setPassword] = React.useState("");
 
-
+  const [checked, setChecked] = React.useState(false);
+  const [checkedError, setCheckedError] = React.useState(false);
 
   const [emailError, setEmailError] = React.useState(false);
   const [emailErrorMessage, setEmailErrorMessage] = React.useState('');
@@ -123,6 +125,13 @@ export default function SignUp(props: { disableCustomTheme?: boolean }) {
       setNameErrorMessage('');
     }
 
+    if (!checked) {
+      setCheckedError(true);
+      isValid = false;
+    } else {
+      setCheckedError(false);
+    }
+
     return isValid;
   };
 
@@ -150,9 +159,14 @@ export default function SignUp(props: { disableCustomTheme?: boolean }) {
       body: JSON.stringify(dataToSend),
       redirect: "follow"
     })
+
     const responseText = await res.text();
-    login(JSON.parse(responseText)['token']);
-    navigate('/account');
+    if (!res.ok) {
+      alert(responseText);
+    } else {
+      login(JSON.parse(responseText)['token']);
+      navigate('/account');
+    }
   };
 
   return (
@@ -241,6 +255,34 @@ export default function SignUp(props: { disableCustomTheme?: boolean }) {
                 color={passwordError ? 'error' : 'primary'}
               />
             </FormControl>
+            <FormControlLabel
+              control={
+                <Checkbox
+                  name="terms"
+                  color="primary"
+                  checked={checked}
+                  onChange={() => setChecked(!checked)}
+                />
+              }
+
+              label={
+                <Typography variant="body2">
+                  I agree to the{' '}
+                  <Link underline="always" color="text.secondary" variant="body2" href="/terms-of-service" target="_blank" rel="noopener noreferrer">
+                    terms and conditions
+                  </Link>
+                  {' '}and{' '}
+                  <Link underline="always" color="text.secondary" variant="body2" href="/privacy-policy" target="_blank" rel="noopener noreferrer">
+                    privacy policy
+                  </Link>
+                </Typography>
+              }
+            />
+            {checkedError &&
+              <Typography variant="body2" color="error">
+                You must agree to the terms and conditions and privacy policy above
+              </Typography>
+            }
             <Typography sx={{ textAlign: 'center' }}>
               Already have an account?{' '}
               <Link
@@ -252,10 +294,8 @@ export default function SignUp(props: { disableCustomTheme?: boolean }) {
               </Link>
             </Typography>
             <Button
-              // type="submit"
               fullWidth
               variant="contained"
-              // onClick={validateInputs}
               onClick={handleSubmit}
             >
               Sign up

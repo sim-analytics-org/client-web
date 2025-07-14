@@ -6,7 +6,7 @@ import LandingPage from './landing-page/LandingPage'
 import GlobalCssOverrides from './shared-theme/GlobalStyles';
 import { ProtectedRoute } from './auth/ProtectedRoute';
 import SignUp from './sign-up/SignUp';
-import ProfilePage from './ProfilePage';
+import ProfilePage from './profile-page/ProfilePage';
 import SignIn from './sign-in/SignIn';
 import TermsOfService from './info-legal-pages/TermsOfService';
 import PrivacyPolicy from './info-legal-pages/PrivacyPolicy';

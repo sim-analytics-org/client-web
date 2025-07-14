@@ -9,8 +9,8 @@ import {
     CircularProgress,
     Button
 } from '@mui/material'
-import { ACCOUNT_DETAILS_URL } from './constants'
-import { useAuthContext } from './auth/AuthContext'
+import { ACCOUNT_DETAILS_URL } from '../constants'
+import { useAuthContext } from '../auth/AuthContext'
 import { Link as RouterLink } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
@@ -80,64 +80,44 @@ export default function ProfilePage() {
                 <Card>
                     <CardHeader title="Active Plan" />
                     <CardContent>
-                        <Typography variant="h6" gutterBottom>
-                            {(() => {
-                                switch (user.subscriptionPlan) {
-                                    case 'monthly':
-                                        return 'Monthly Plan'
-                                    case 'yearly':
-                                        return 'Yearly Plan'
-                                    default:
-                                        return 'No Active Plan'
-                                }
-                            })()}
-                        </Typography>
                         <Typography variant="body2" color="text.secondary">
-                            {user.subscriptionPlan === 'none'
-                                ? "You are currently not subscribed to any billing cycle"
-                                : `You are currently subscribed to the 
-                            ${user.subscriptionPlan}
-                            billing cycle.`}
+                            The SimAnalytics site does not directly keep track of your subscription and billing information.
+                            That is handled by Stripe. To see and manage the status of your SimAnalytics picks subscription, click the
+                            button below:
                         </Typography>
+                        <a href="https://billing.stripe.com/p/login/14A5kF6EMdPQ8bucNP9IQ00" target="_blank" rel="noopener noreferrer">
+                            <Button type="submit" variant="contained">
+                                {'Manage Billing & Subscription'}
+                            </Button>
+                        </a>
+
+                        <br />
+                        <br />
+
+                        <Typography variant="body2" color="text.secondary">
+                            Click below to subscribe to the Monthly Picks plan ($199.99 per month). This will re-direct you to a separate checkout page.
+                        </Typography>
+                        <a href="https://buy.stripe.com/14A5kF6EMdPQ8bucNP9IQ00" target="_blank" rel="noopener noreferrer">
+                            <Button type="submit" variant="contained">
+                                {'Subscribe to the Monthly plan!'}
+                            </Button>
+                        </a>
+
+                        <br />
+                        <br />
+
+                        <Typography variant="body2" color="text.secondary">
+                            Click below to subscribe to the Yearly Picks plan ($999.99 per year). This will re-direct you to a separate checkout page.
+                        </Typography>
+                        <a href="https://buy.stripe.com/3cIbJ3gfm278gI05ln9IQ01" target="_blank" rel="noopener noreferrer">
+                            <Button type="submit" variant="contained">
+                                {'Subscribe to the Yearly plan!'}
+                            </Button>
+                        </a>
                     </CardContent>
                 </Card>
             )
         }
-
-        return (
-            <Grid container spacing={2}>
-                {/* <Grid xs={12} md={6}> */}
-                <Grid size={{ xs: 12, sm: 8, md: 6 }}>
-                    <Card>
-                        <CardHeader title="Monthly Plan" />
-                        <CardContent>
-                            <Typography>$10 / month</Typography>
-                            <Typography variant="body2" color="text.secondary" gutterBottom>
-                                Billed monthly. Cancel anytime.
-                            </Typography>
-                            <Button variant="contained" fullWidth>
-                                Choose Monthly
-                            </Button>
-                        </CardContent>
-                    </Card>
-                </Grid>
-                {/* <Grid item xs={12} md={6}> */}
-                <Grid size={{ xs: 12, sm: 8, md: 6 }}>
-                    <Card>
-                        <CardHeader title="Yearly Plan" />
-                        <CardContent>
-                            <Typography>$100 / year</Typography>
-                            <Typography variant="body2" color="text.secondary" gutterBottom>
-                                Save 17% with annual billing.
-                            </Typography>
-                            <Button variant="contained" fullWidth>
-                                Choose Yearly
-                            </Button>
-                        </CardContent>
-                    </Card>
-                </Grid>
-            </Grid>
-        )
     }
 
     return (
@@ -193,6 +173,25 @@ export default function ProfilePage() {
             </Typography>
 
             <Box mt={2}>{renderPlanCard()}</Box>
+
+            <br />
+
+            <Typography variant="h5" gutterBottom color="text.primary">
+                Assistance
+            </Typography>
+            <Box mt={2}>
+                <Card>
+                    <CardHeader title="SimAnalytics Contact" />
+                    <CardContent>
+                        <Typography variant="body2" color="text.secondary">
+                            If in any case you need assistance creating or canceling your subscription, do not hesitate to reach out to <a>SimAnalyticsWin@gmail.com</a>
+                        </Typography>
+                    </CardContent>
+                </Card>
+            </Box>
+
+            <br />
+
             <Button
                 variant="contained"
                 color="error"
